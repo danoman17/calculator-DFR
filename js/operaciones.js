@@ -6,13 +6,16 @@ function operacionSuma() {
 
     segundoValor = document.getElementById("segundoValorOperacionesSimples").value;
 
+    var url = "http://localhost:8085/suma?n1="+primerValor+"&n2="+segundoValor;
     var resultado = 0;
 
-    resultado = parseFloat(primerValor) + parseFloat(segundoValor);
+    $.getJSON(url,
+        function(json) {
+            console.log(json);
+            casillaResultado = document.getElementById("resultadoOperacionesSimples").value = json.resultado;
 
-    casillaResultado = document.getElementById("resultadoOperacionesSimples").value = resultado;
-
-
+        }
+    );
 }
 
 function operacionResta() {
@@ -21,13 +24,16 @@ function operacionResta() {
 
     segundoValor = document.getElementById("segundoValorOperacionesSimples").value;
 
+    var url = "http://localhost:8085/resta?n1="+primerValor+"&n2="+segundoValor;
     var resultado = 0;
 
-    resultado = parseFloat(primerValor) - parseFloat(segundoValor);
+    $.getJSON(url,
+        function(json) {
+            console.log(json);
+            casillaResultado = document.getElementById("resultadoOperacionesSimples").value = json.resultado;
 
-    casillaResultado = document.getElementById("resultadoOperacionesSimples").value = resultado;
-
-
+        }
+    );
 }
 
 function operacionMultiplicacion() {
@@ -36,13 +42,16 @@ function operacionMultiplicacion() {
 
     segundoValor = document.getElementById("segundoValorOperacionesSimples").value;
 
+    var url = "http://localhost:8085/multiplicacion?n1="+primerValor+"&n2="+segundoValor;
     var resultado = 0;
 
-    resultado = parseFloat(primerValor) * parseFloat(segundoValor);
+    $.getJSON(url,
+        function(json) {
+            console.log(json);
+            casillaResultado = document.getElementById("resultadoOperacionesSimples").value = json.resultado;
 
-    casillaResultado = document.getElementById("resultadoOperacionesSimples").value = resultado;
-
-
+        }
+    );
 }
 
 function operacionDivision() {
@@ -51,13 +60,16 @@ function operacionDivision() {
 
     segundoValor = document.getElementById("segundoValorOperacionesSimples").value;
 
+    var url = "http://localhost:8085/division?n1="+primerValor+"&n2="+segundoValor;
     var resultado = 0;
 
-    resultado = parseFloat(primerValor) / parseFloat(segundoValor);
+    $.getJSON(url,
+        function(json) {
+            console.log(json);
+            casillaResultado = document.getElementById("resultadoOperacionesSimples").value = json.resultado;
 
-    casillaResultado = document.getElementById("resultadoOperacionesSimples").value = resultado;
-
-
+        }
+    );
 }
 
 
@@ -67,48 +79,68 @@ function operacionPotencia() {
 
     segundoValor = document.getElementById("segundoValorOperacionesSimples").value;
 
-    var resultado = 0;
+    var url = "http://localhost:8085/potencia?n1="+primerValor+"&n2="+segundoValor;
+    
 
-    resultado =  Math.pow( parseFloat( primerValor ), parseFloat( segundoValor ) );
-
-    casillaResultado = document.getElementById("resultadoOperacionesSimples").value = resultado;
-
-
+    $.getJSON(url,
+        function(json) {
+            console.log(json);
+            casillaResultado = document.getElementById("resultadoOperacionesSimples").value = json.resultado;
+    
+        }
+    );
 }
 
 
 function operacionSin() {
-    valor = document.getElementById("valorOperacionTrigonometrica").value;
 
-    var resultado = 0;
+    primerValor = document.getElementById("valorOperacionTrigonometrica").value;
 
-    resultado = Math.sin( parseFloat( valor ) );
 
-    casillaResultado = document.getElementById("resultadoTrigonometrica").value = resultado;
+    var url = "http://localhost:8085/sin?n1="+primerValor;
+    
 
+    $.getJSON(url,
+        function(json) {
+            console.log(json);
+            casillaResultado = document.getElementById("resultadoTrigonometrica").value = json.resultado;
+    
+        }
+    );
 }
 
 function operacionCos() {
-    valor = document.getElementById("valorOperacionTrigonometrica").value;
 
-    var resultado = 0;
+    primerValor = document.getElementById("valorOperacionTrigonometrica").value;
 
-    resultado = Math.cos( parseFloat( valor ) );
 
-    casillaResultado = document.getElementById("resultadoTrigonometrica").value = resultado;
+    var url = "http://localhost:8085/cos?n1="+primerValor;
+    
 
+    $.getJSON(url,
+        function(json) {
+            console.log(json);
+            casillaResultado = document.getElementById("resultadoTrigonometrica").value = json.resultado;
+    
+        }
+    );
 }
 
 
 function operacionTan() {
-    valor = document.getElementById("valorOperacionTrigonometrica").value;
 
-    var resultado = 0;
+    primerValor = document.getElementById("valorOperacionTrigonometrica").value;
 
-    resultado = Math.tan( parseFloat( valor ) );
+    var url = "http://localhost:8085/tan?n1="+primerValor;
+    
 
-    casillaResultado = document.getElementById("resultadoTrigonometrica").value = resultado;
-
+    $.getJSON(url,
+        function(json) {
+            console.log(json);
+            casillaResultado = document.getElementById("resultadoTrigonometrica").value = json.resultado;
+    
+        }
+    );
 }
 
 
